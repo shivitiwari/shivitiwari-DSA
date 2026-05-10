@@ -1,0 +1,24 @@
+//2.Given a list of integers, use a Function<Integer, Integer> to:
+//square each number		-Function<Integer, Integer>    ---(this is used with map)---then print only squares greater than 20
+
+//In main class
+
+import java.util.*;
+import java.util.Arrays;
+import java.util.function.Function;
+
+public class Test2{
+
+    public static  void main(String args[]){
+	int list[]={1, 2, 3, 4, 5, 6, 7, 8};
+	
+	Function<Integer,Integer> squareOfNum = n->n*n
+	
+	Arrays.stream(list)
+		.boxed()
+		.map(squareOfNum)
+		.filter(n->n>20)
+		.forEach(n-> System.out.print(n+ " "));
+		}
+    }
+}

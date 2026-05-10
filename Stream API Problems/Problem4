@@ -1,0 +1,21 @@
+@FunctionalInterface
+public interface IntOperation {
+    int apply(int a, int b);
+}
+
+Class Test{
+  public static void main(String args[]){
+    IntOperation add=(a,b)->a+b;
+    IntOperation sub=(a,b)->a-b;
+    IntOperation mul=(a,b)->a*b;
+    IntOperation div=(a,b)->a/b;
+
+    System.out.println(operate(2,3,add));
+    System.out.println(operate(2,3,mul));
+    System.out.println(operate(5,3,sub));
+    System.out.println(operate(6,3,div));
+  }
+  static int operate(int a, int b, IntOperation oper){
+        return oper.apply(a,b);
+  }
+}

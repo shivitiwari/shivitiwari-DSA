@@ -1,0 +1,12 @@
+//Longest String
+class Test{
+  public static void main(String args[]){
+      List<String> words = Arrays.asList("java", "functional", "stream", "lambda", "api");
+        BinaryOperator<String> longestString =
+                (a, b) -> a.length() >= b.length() ? a : b;
+        String result = words.stream()
+                .reduce(longestString)
+                .orElse("");
+        System.out.println(result); // functional
+ }
+}

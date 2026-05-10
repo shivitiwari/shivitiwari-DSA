@@ -1,0 +1,24 @@
+//1.Write a program using a Predicate<Integer> to filter and print only even numbers.
+
+public List<Integer> checkEvenNumber(int[] list){									Predicate<Integer>     ---(this is used with filter)
+	Predicate<Integer> isEven= n->n%2==0;
+      return Arrays.stream(list).
+			boxed().
+			filter(isEven).
+			collect(Collectors.toList())
+		}
+		
+//In main class
+
+public static void main(String[] args) {
+    int[] list = {1, 2, 3, 4, 5, 6, 7, 8};
+	
+	Predicate<Integer> isEven=n->n%2==0;
+	
+	Arrays.stream(list)
+		.boxed()
+		.filter(isEven)
+		.forEach(n->System.out.println(n+" "));
+	}
+
+	
